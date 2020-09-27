@@ -1,25 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+//Dependencies
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import SearchRecipes from "./pages/SearchRecipes";
+import SavedRecipes from "./pages/SavedRecipes";
+import Navbar from "./components/Navbar";
+import { ApolloProvider } from "@apollo/react-hooks";
+import ApolloClient from "apollo-boost";
+
+//put new ApolloClient into a client variable
+const client = new ApolloClient({
+  request: (operation) => {
+    //token is pulled from localStorage
+    const token = localStorage.getItem("id_token");
+
+    operation.setContext({
+      headers: {
+        // if the token is there set Bearer 'token' else ''
+        authorization: token ? `Bearer ${token}` : "",
+      },
+    });
+  },
+  uri: "/graphql",
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    //wrap entire App with ApolloProvider
+    <ApolloProvider client={client}>
+      <Router>
+        <>
+          <Navbar />
+          <Switch>
+            <Route exact path="/" component={SearchRecipes} />
+            <Route exact path="/saved" component={SavedRecipes} />
+            <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
+          </Switch>
+        </>
+      </Router>
+    </ApolloProvider>
   );
 }
 
