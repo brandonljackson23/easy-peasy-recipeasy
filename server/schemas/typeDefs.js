@@ -1,11 +1,7 @@
-// Dependencies
+// DEPENDENCIES
 const { gql } = require("apollo-server-express");
-
-// This is the typeDefs folder for the book search(book changed to recipe)
-// This is a good starting point but may not be what we need.
-// We might need to change, add, or remove things.
-
-//need User, Query, Recipe, Auth, Mutation, & savedRecipe
+// QUERIES
+/// May need to modify recipe fields depending on the API
 const typeDefs = gql`
   type Query {
     me: User
@@ -20,10 +16,19 @@ const typeDefs = gql`
   }
 
   type Recipe {
-    recipeId: ID
-    authors: [String]
-    description: String
+    recipeId: Int
     title: String
+    ingredients: [String]
+    directions: String
+    image: String
+    link: String
+  }
+
+  input savedRecipe {
+    recipeId: Int
+    title: String
+    ingredients: [String]
+    directions: String
     image: String
     link: String
   }
@@ -31,7 +36,7 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    saveRecipe(input: String!): User
+    saveRecipe(input: savedRecipe): User
     removeRecipe(recipeId: String!): User
   }
 
@@ -39,15 +44,6 @@ const typeDefs = gql`
     token: ID!
     user: User
   }
-
-  type savedRecipe {
-    recipeId: String
-    title: String
-    authors: [String]
-    description: String
-    image: String
-    link: String
-  }
 `;
-
+// EXPORTS
 module.exports = typeDefs;

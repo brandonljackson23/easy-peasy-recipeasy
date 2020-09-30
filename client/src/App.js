@@ -1,4 +1,4 @@
-//Dependencies
+// DEPENDENCIES
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SearchRecipes from "./pages/SearchRecipes";
@@ -6,13 +6,11 @@ import SavedRecipes from "./pages/SavedRecipes";
 import Navbar from "./components/Navbar";
 import { ApolloProvider } from "@apollo/react-hooks";
 import ApolloClient from "apollo-boost";
-
-//put new ApolloClient into a client variable
+// Apollo Client
 const client = new ApolloClient({
   request: (operation) => {
     //token is pulled from localStorage
     const token = localStorage.getItem("id_token");
-
     operation.setContext({
       headers: {
         // if the token is there set Bearer 'token' else ''
@@ -22,10 +20,9 @@ const client = new ApolloClient({
   },
   uri: "/graphql",
 });
-
+// App - Wrapped with Apollo Provider
 function App() {
   return (
-    //wrap entire App with ApolloProvider
     <ApolloProvider client={client}>
       <Router>
         <>
@@ -40,5 +37,5 @@ function App() {
     </ApolloProvider>
   );
 }
-
+// EXPORTS
 export default App;

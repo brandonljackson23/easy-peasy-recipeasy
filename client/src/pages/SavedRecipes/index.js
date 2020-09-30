@@ -1,4 +1,4 @@
-//Dependencies
+// DEPENDENCIES
 import React from "react";
 import {
   Jumbotron,
@@ -7,13 +7,12 @@ import {
   Card,
   Button,
 } from "react-bootstrap";
-import Auth from "../utils/auth";
-import { removeRecipeId } from "../utils/localStorage";
-import { useQuery } from "@apollo/react-hooks";
-import { QUERY_ME } from "../utils/queries";
-import { useMutation } from "@apollo/react-hooks";
-import { REMOVE_RECIPE } from "../utils/mutations";
-
+import Auth from "../../utils/auth";
+import { removeRecipeId } from "../../utils/localStorage";
+import { useQuery, useMutation } from '@apollo/react-hooks';
+import { QUERY_ME } from "../../utils/queries";
+import { REMOVE_RECIPE } from "../../utils/mutations";
+// SAVED BOOKS
 const SavedRecipes = () => {
   const { loading, data } = useQuery(QUERY_ME);
   const [removeRecipe, { error }] = useMutation(REMOVE_RECIPE);
@@ -24,11 +23,9 @@ const SavedRecipes = () => {
   const handleDeleteRecipe = async (recipeId) => {
     //if user is loggedin get token else null
     const token = Auth.loggedIn() ? Auth.getToken() : null;
-
     if (!token) {
       return false;
     }
-
     try {
       const { data } = await removeRecipe({
         variables: {
@@ -41,12 +38,10 @@ const SavedRecipes = () => {
       console.error(err);
     }
   };
-
   // if data is still loading display LOADING...
   if (loading) {
     return <h2>LOADING...</h2>;
   }
-
   return (
     <>
       <Jumbotron fluid className="text-light bg-dark">
@@ -92,5 +87,7 @@ const SavedRecipes = () => {
     </>
   );
 };
-
+// EXPORTS
 export default SavedRecipes;
+
+// Lots of this front end stuff will change once we have more specifics about the API

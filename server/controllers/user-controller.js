@@ -35,7 +35,10 @@ module.exports = {
   // {body} is destructured req.body
   async login({ body }, res) {
     const user = await User.findOne({
-      $or: [{ username: body.username }, { email: body.email }],
+      $or: [
+        { username: body.username }, 
+        { email: body.email }
+      ],
     });
     if (!user) {
       return res.status(400).json({ message: "Can't find this user" });
@@ -67,7 +70,6 @@ module.exports = {
   },
   // remove a recipe from `savedRecipes`
   // "recipeId" may be wrong it depends on the API we use will need to match that
-
   async deleteRecipe({ user, params }, res) {
     const updatedUser = await User.findOneAndUpdate(
       { _id: user._id },

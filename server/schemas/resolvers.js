@@ -1,8 +1,8 @@
-//Dependencies
+// DEPENDENCIES
 const { AuthenticationError } = require("apollo-server-express");
 const { User } = require("../models");
 const { signToken } = require("../utils/auth");
-
+// MUTATIONS
 const resolvers = {
   Query: {
     me: async (parent, args, context) => {
@@ -14,8 +14,8 @@ const resolvers = {
         );
         return userData;
       }
-      throw new AuthenticationError("Login Please!");
-    },
+      throw new AuthenticationError("Please Login!");
+    }
   },
 
   Mutation: {
@@ -25,7 +25,6 @@ const resolvers = {
       const user = await User.create(args);
       //sign the token with the user info
       const token = signToken(user);
-
       return { user, token };
     },
 
@@ -66,14 +65,12 @@ const resolvers = {
       //if logged in will remove recipe from saved list of recipes for user
       const saveUserRecipes = await User.findByIdAndDelete(
         { _id: context.user._id },
-        {
-          $pull: { savedRecipes: { recipeId: recipeId } },
-        },
+        { $pull: { savedRecipes: { recipeId: recipeId } } },
         { new: true }
       );
       return saveUserRecipes;
-    },
-  },
+    }
+  }
 };
-
+// EXPORTS
 module.exports = resolvers;

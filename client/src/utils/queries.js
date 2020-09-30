@@ -1,7 +1,6 @@
-//Dependencies
+// DEPENDENCIES
 import gql from "graphql-tag";
-
-// gql querie for 'me' logged in user
+// ME Query Export
 export const QUERY_ME = gql`
   {
     me {
@@ -11,9 +10,9 @@ export const QUERY_ME = gql`
       recipeCount
       savedRecipes {
         recipeId
-        authors
-        description
         title
+        ingredients
+        directions
         image
         link
       }

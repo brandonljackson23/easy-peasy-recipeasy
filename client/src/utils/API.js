@@ -7,7 +7,6 @@ export const getMe = (token) => {
     },
   });
 };
-
 export const createUser = (userData) => {
   return fetch("/api/users", {
     method: "POST",
@@ -17,7 +16,6 @@ export const createUser = (userData) => {
     body: JSON.stringify(userData),
   });
 };
-
 export const loginUser = (userData) => {
   return fetch("/api/users/login", {
     method: "POST",
@@ -27,7 +25,6 @@ export const loginUser = (userData) => {
     body: JSON.stringify(userData),
   });
 };
-
 // save recipe data for a logged in user
 export const saveRecipe = (recipeData, token) => {
   return fetch("/api/users", {
@@ -39,7 +36,6 @@ export const saveRecipe = (recipeData, token) => {
     body: JSON.stringify(recipeData),
   });
 };
-
 // remove saved recipe data for a logged in user
 export const deleteRecipe = (recipeId, token) => {
   return fetch(`/api/users/recipes/${recipeId}`, {
@@ -49,7 +45,6 @@ export const deleteRecipe = (recipeId, token) => {
     },
   });
 };
-
 // make a search to our recipes api
 // we need to decide what one we wanna go with and put it here
 export const searchApiRecipes = (query) => {

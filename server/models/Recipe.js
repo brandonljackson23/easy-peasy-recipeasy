@@ -30,5 +30,5 @@ const recipeSchema = new Schema({
     required: true,
   },
 });
-
+// EXPORTS
 module.exports = recipeSchema;
