@@ -1,13 +1,15 @@
+// DEPENDENCIES
 const mongoose = require("mongoose");
-
-//we will need to update "mongodb://localhost/" to include the API we end up using
-//MONGODB_URI will need to be set locally in the .env
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/", {
+const dotenv = require("dotenv").config();
+// DEFINE CONNECTION
+console.log(process.env.MDB);
+const MONGODB_URI = `mongodb+srv://group1:${process.env.MPASS}@cluster0.lqst8.mongodb.net/${process.env.MDB}?retryWrites=true&w=majority&replicaSet=primary`
+// MONGOOSE CONNECTION
+mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
   useFindAndModify: true,
 });
-
+// EXORTS
 module.exports = mongoose.connection;
