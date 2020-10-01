@@ -4,12 +4,12 @@ const { Schema } = require("mongoose");
 // but we'll use it as the schema for the User's `savedRecipes` array in User.js
 // we might need to add or remove properties from this
 const recipeSchema = new Schema({
-  authors: [
+  ingredients: [
     {
       type: String,
     },
   ],
-  description: {
+  directions: {
     type: String,
     required: true,
   },
