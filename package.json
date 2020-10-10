@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/garves44/project3#readme",
   "dependencies": {
-    "if-env": "^1.0.4"
+    "axios": "^0.20.0",
+    "if-env": "^1.0.4",
+    "uuid": "^8.3.1"
   }
 }

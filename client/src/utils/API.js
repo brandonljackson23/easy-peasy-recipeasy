@@ -48,5 +48,11 @@ export const deleteRecipe = (recipeId, token) => {
 // make a search to our recipes api
 // we need to decide what one we wanna go with and put it here
 export const searchApiRecipes = (query) => {
-  return fetch(`WHAT EVER API LINK WE END UP USING${query}`);
+  return fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?number=10&query=${query}`, {
+    "method": "GET",
+    "headers": {
+      "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+      "x-rapidapi-key": "94855e6ce1mshd59c3f768ad8ab3p15f4f8jsn9625779c6eb2"
+    }
+  })
 };
