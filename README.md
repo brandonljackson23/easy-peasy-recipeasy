@@ -60,4 +60,4 @@ However, if interested in contributing to the application, a user *must* complet
 ---
 
 ## **SCREENSHOT**  
-![](/assets/images/homepage.png) 
+![](/assets/images/homepage.PNG) 
