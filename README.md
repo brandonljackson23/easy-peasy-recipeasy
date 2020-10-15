@@ -1,11 +1,63 @@
-# project3
+# <div align="center">**EASY PEASY RECIPEASY**</div>
 
-## FOR DEVELOPMENT
+## **TABLE OF CONTENTS**    
+[1. TABLE OF CONTENTS](#TABLE-OF-CONTENTS)  
+[2. LICENSE](#LICENSE)  
+[3. PROJECT DESCRIPTION](#PROJECT-DESCRIPTION)  
+[4. APPLICATION LINKS](#APPLICATION-LINKS)  
+[5. CONTRIBUTIONS](#CONTRIBUTIONS)  
+[6. INSTALLATION](#INSTALLATION)   
+[7. USAGE](#USAGE)   
+[8. TESTING](#TESTING)    
+[9. SCREENSHOT](#SCREENSHOT)  
 
-After you clone the repo do npm install in the root directory it will CD into Server and Client and run npm i.
+---
 
-If any files are missing feel free to add them.
+## **LICENSE**  
+![MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+> This application is covered under the [MIT License](https://opensource.org/licenses/MIT)    
 
-If any files have code that we don't need in feel free to remove it. I just added some starter code to give us an idea of where to go and how it "MIGHT" look.
+---
 
-Everyone remember to make their own branch so we don't get merge conflicts lets, always pull from master and merge to your branch locally. then when you push back to the repo, push to your branch and merge through github in pull requests. That should help us avoid any issues. I am going to just name my branch my name to keep it simple.
+## **PROJECT DESCRIPTION**
+> This MERN stack single-page project is called Easy Peasy Recipeasy, a recipe searching web-application. Users can create an account and save their favorite recipes to their profile. Searching for recipes is easy, and results provide an ingredient list and a link to the full instructions and recipe source.  
+
+---
+
+## **APPLICATION LINKS**
+> [Live Heroku Application](LINK HERE!!!)   
+> [GitHub Repository](https://github.com/garves44/project3)   
+
+---
+
+## **CONTRIBUTIONS**   
+Please contact us for all application inqueries.
+| Brandon Jackson | Jeremy Collins | Morgan Hansen | Theodore Butts | Jarred Baca |
+| :------: | :------: | :------: | :------: | :------: |
+| <brandonljackson@gmail.com> | <garves44@gmail.com> | <mdhansen19@gmail.com> | <theodorebutts@gmail.com> | <jarredbaca@gmail.com> |
+| [github](https://github.com/brandonljackson23) | [github](https://github.com/garves44) | [github](https://github.com/mhans19) | [github](https://github.com/theodorebutts) | [github](https://github.com/jbaca22) |
+
+
+
+---
+
+## **INSTALLATION**
+> This online application does not require any installation prior to running.   
+However, if interested in contributing to the application, a user *must* complete the following:  
+> 1. Download the [GitHub repository](https://github.com/garves44/project3) to a local repository. 
+> 2. [Install dependencies](#DEVELOPMENT) such as Node.js and NPM packages.   
+
+---
+
+## **USAGE**
+> The application is deployed with Heroku and available for immediate use. Simply navigate to the application by following the [application link](LINK!!!).
+
+---
+
+## **TESTING**
+> During development efforts, [graphQL Playground](https://www.graphqlbin.com/v2/new) was used to test queries and mutations.  
+
+---
+
+## **SCREENSHOT**  
+![](/assets/images/homepage.png) 
