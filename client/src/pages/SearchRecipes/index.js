@@ -11,10 +11,7 @@ function SearchRecipes() {
   const [recipes, setRecipes] = useState([]);
   const [alert, setAlert] = useState("");
 
-  const APP_ID = "b436242e";
-  const APP_KEY = "43c43d5b80a88a095556e86d11a7ba28";
-
-  const url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`;
+  const url = `https://api.edamam.com/search?q=${query}&app_id=${process.env.APP_ID}&app_key=${APP_KEY}`;
 
   const getData = async () => {
     if (query !== "") {
@@ -31,9 +28,9 @@ function SearchRecipes() {
     }
   };
 
-  const onChange = e => setQuery(e.target.value);
+  const onChange = (e) => setQuery(e.target.value);
 
-  const onSubmit = e => {
+  const onSubmit = (e) => {
     e.preventDefault();
     getData();
   };
@@ -55,7 +52,7 @@ function SearchRecipes() {
       </form>
       <div className="recipes">
         {recipes !== [] &&
-          recipes.map(recipe => <Recipe key={uuidv4()} recipe={recipe} />)}
+          recipes.map((recipe) => <Recipe key={uuidv4()} recipe={recipe} />)}
       </div>
     </div>
   );
