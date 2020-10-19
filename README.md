@@ -31,7 +31,7 @@
 ## **APPLICATION LINKS**
 
 > [Live Heroku Application](https://easypeasyrecipeasy.herokuapp.com/)  
-> [GitHub Repository](https://github.com/garves44/project3)
+> [GitHub Repository](https://github.com/brandonljackson23/easy-peasy-recipeasy)
 
 ---
 
